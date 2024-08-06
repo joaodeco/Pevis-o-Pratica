@@ -8,7 +8,7 @@ function editar(vetor, callback){
     }
     else{
         listar();
-        let opcaoEditar = prompt('Digite o númelogro do contato que deseja editar!');
+        let opcaoEditar = prompt('Digite o ID do contato que deseja editar!');
         
         let nome = prompt('Digite o nome nome do contato!');
         let telefone = prompt('Agora o novo telefone!');

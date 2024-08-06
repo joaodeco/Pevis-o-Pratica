@@ -1,4 +1,5 @@
-const { listar } = require('./listar');
+const contatos = require('./contatos');
+const  listar  = require('./listar');
 
 function remover(vetor, prompt, callback) {
     if(vetor.length == 0){
@@ -9,9 +10,10 @@ function remover(vetor, prompt, callback) {
 
     listar(vetor);
 
-    let opcaoRemover = parseInt(prompt('Digite o numero do contato que deseja remover'));
-    vetor.splice(opcaoRemover-1, 1);
+    let opcaoRemover = parseInt(prompt('Digite o ID do contato que deseja remover'));
+    contatos.findIndex(vetor => vetor.splice(opcaoRemover, 1));
+    console.log('Removido com sucesso! ')
 callback()
 }};
 
-module.exports = {remover}
+module.exports = remover
