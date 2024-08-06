@@ -3,8 +3,8 @@ function listar(vetor) {
         console.log('Não a nenhum contato salvo neste monento, adicione um para poder listalos!')
     }else{
     vetor.forEach((contato, index) => {
-      console.log(`${index+1}, Nome: ${contato.nome}, Telefone: ${contato.telefone}, Email: ${contato.email}`);
+      console.log(`${index+1}ID: ${contato.id} Nome: ${contato.nome}, Telefone: ${contato.telefone}, Email: ${contato.email}`);
     })};
   };
 
-module.exports = { listar };
+module.exports = listar;

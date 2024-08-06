@@ -2,9 +2,10 @@ const { listar } = require('./listar');
 
 function remover(vetor, prompt, callback) {
     if(vetor.length == 0){
-        console.log('Não existe nehum contato salvo, tente adicionar um para poder remover')
+        console.log('Não existe nehum contato salvo, tente adicionar um para poder remover ')
+        callback()
     }else{
-    console.log('Esses são nossos contatos escolha um deles para remover');
+    console.log('Esses são nossos contatos digite o ID dele para remover ');
 
     listar(vetor);
 
