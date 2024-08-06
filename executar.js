@@ -2,8 +2,9 @@ const prompt = require ('prompt-sync')();
 const listar = require('./listar');
 const cadastrar = require ('./cadastrar');
 const editar = require ('./editar')
-const remover = require ('./remover')
-let contatos = require ('./contatos')
+const remover = require ('./remover');
+const contatos = require('./contatos');
+
 
   function executar(){
     console.log(`
@@ -25,7 +26,7 @@ let contatos = require ('./contatos')
 
     switch(opcao){
         case'1':
-            cadastrar(contatos, executar);
+            cadastrar(executar);
             break
         case'2':
             remover(contatos, prompt, executar);
@@ -35,7 +36,7 @@ let contatos = require ('./contatos')
             executar()
             break
         case'4':
-            editar(contatos, executar);   
+            editar(executar);   
             break
         case'5':
             console.log('Obrigado por usar nossos serviços🤠')

@@ -1,20 +1,18 @@
 const prompt = require ('prompt-sync')();
 const listar = require('./listar');
+const contatos = require('./contatos')
 
-function editar(vetor, callback){
+function editar(callback){
     if (contatos.length == 0){
         console.log('Não a nenhum contato salvo neste monento, adicione um para poder editalos!');
-        callback()
-    }
-    else{
+    } else {
         listar();
-        let opcaoEditar = prompt('Digite o ID do contato que deseja editar!');
-        
+        let opcaoEditar = prompt('Qual desses você deseja editar')
+        const index = contatos.findIndex(contato => contato.id === opcaoEditar );
         let nome = prompt('Digite o nome nome do contato!');
         let telefone = prompt('Agora o novo telefone!');
-        email = prompt ('Agora para finalizar sua edição, o novo email!');
-
-        vetor.push(cadastrar(nome, telefone, email));
+        let email = prompt ('Agora para finalizar sua edição, o novo email!');
+        contatos.push(editar(index, {nome, telefone, email}));
         callback();
     };
 };
