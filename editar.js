@@ -10,10 +10,14 @@ function editar(callback){
         let opcaoEditar = prompt('Qual desses você deseja editar')
         const index = contatos.findIndex(contato => contato.id === opcaoEditar );
         let nome = prompt('Digite o nome nome do contato!');
-        let telefone = prompt('Agora o novo telefone!');
+        let telefones = []
+        let telefone
+        while((telefone = prompt('Qual seus telefones(se não tiver deixe em branco): '))){
+            telefones.push(telefone)
+        }
         let email = prompt ('Agora para finalizar sua edição, o novo email!');
         
-        let jaExiste = contatos.find(cont => cont.email === contato.email);
+        let jaExiste = contatos.find(cont => cont.email === contatos.email);
     if (jaExiste){
         throw new Error('Ja existe um contato com esse email!')
     } else {

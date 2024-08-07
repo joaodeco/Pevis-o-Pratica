@@ -1,7 +1,7 @@
 const prompt = require ('prompt-sync')();
 let contatos = require('./contatos')
 
-function cadastrar(contato, callback){
+function cadastrar(contato){
     
     let nome = prompt('Qual seu nome? ')
     let telefones = []
@@ -12,13 +12,12 @@ function cadastrar(contato, callback){
     let email = prompt('Qual seu email? ')
     console.log('Seu cadastro foi efetuado com sucesso!! ')
 
-    let jaExiste = contatos.find(cont => cont.email === contato.email);
+    let jaExiste = contatos.find(cont => cont.email === contatos.email);
     if (jaExiste){
         throw new Error('Ja existe um contato com esse email!')
     } else {
-        contatos.push({id: contatos.length + 1, nome, telefone, email})
+        contatos.push({id: contatos.length + 1, nome, email})
     }
-    callback()
 };
 
 module.exports = cadastrar 
