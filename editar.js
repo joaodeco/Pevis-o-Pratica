@@ -12,7 +12,14 @@ function editar(callback){
         let nome = prompt('Digite o nome nome do contato!');
         let telefone = prompt('Agora o novo telefone!');
         let email = prompt ('Agora para finalizar sua edição, o novo email!');
+        
+        let jaExiste = contatos.find(cont => cont.email === contato.email);
+    if (jaExiste){
+        throw new Error('Ja existe um contato com esse email!')
+    } else {
         contatos.push(editar(index, {nome, telefone, email}));
+    }
+
         callback();
     };
 };
