@@ -26,8 +26,7 @@ const contatos = require('./contatos');
 
     switch(opcao){
         case'1':
-            cadastrar();
-            executar()
+            cadastrar(executar);
             break
         case'2':
             remover(contatos, prompt, executar);
