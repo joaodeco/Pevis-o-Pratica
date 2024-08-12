@@ -6,7 +6,7 @@ for(let i = 0; i < contatos.length; i++){
         Nome: ${contato.nome},
         Email: ${contato.email},`)
       for(let j = 0;j < contato.telefone.length; j++){
-        console.log(`   ${j+1}  ${contato.telefone[j]}`)
+        console.log(`        Número: ${contato.telefone[j]}`)
       }
       console.log('')
     }
