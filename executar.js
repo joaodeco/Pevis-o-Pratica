@@ -3,7 +3,7 @@ const listar = require('./listar');
 const cadastrar = require ('./cadastrar');
 const editar = require ('./editar')
 const remover = require ('./remover');
-const contatos = require('./contatos');
+let contatos = require('./contatos');
 
 
   function executar(){

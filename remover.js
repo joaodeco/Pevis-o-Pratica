@@ -11,9 +11,19 @@ function remover(vetor, prompt, callback) {
     listar(vetor);
 
     let opcaoRemover = parseInt(prompt('Digite o ID do contato que deseja remover'));
-    contatos.findIndex(vetor => vetor.splice(opcaoRemover, 1));
-    console.log('Removido com sucesso! ')
-callback()
+
+    let confirmacaoRemover = prompt('Tem certeza que deseja remover esse contato (Essa ação não poderá ser desfeita)')
+    
+    if(confirmacaoRemover == 'sim' || confirmacaoRemover == 'Sim'){
+
+        contatos.findIndex(vetor => vetor.splice(opcaoRemover, 1));
+        console.log('Removido com sucesso! ')
+        callback()
+        
+    } else {
+        console.log('A operação foi cancelada, voltando ao menu')
+        callback()
+    }
 }};
 
 module.exports = remover
